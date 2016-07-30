@@ -1,0 +1,10 @@
+<launch>
+  <rosparam ns="needybot" subst_value="true">
+    voice:
+      cache_dir: $(find needybot_hello_world)/cache
+  </rosparam>
+
+  <include file="$(find needybot_dialog)/launch/warm_cache.launch">
+    <arg name="manifest" value="$(find needybot_hello_world)/param/dialog_manifest.yml" />
+  </include>
+</launch>

@@ -1,0 +1,36 @@
+<launch>
+
+  <!--
+  Sign up for a free Ivona account here https://www.ivona.com/us/for-business/speech-cloud/
+  -->
+  <!--
+  <env name="IVONA_ACCESS_KEY" value="your key here" />
+  <env name="IVONA_SECRET_KEY" value="your secret key here" />
+  -->
+
+  <rosparam ns="needybot/speech" subst_value="true">
+    voice:
+      clear_cache: False 
+      warm_cache: True
+      cache_dir: $(find needybot_hello_world)/cache
+  </rosparam>
+
+  <arg name="urdf_file" value="$(find xacro)/xacro.py '$(find needybot)/urdf/needybot.urdf.xacro'" />
+  <param name="robot_description" command="$(arg urdf_file)" />
+
+  <!-- Turtlebot ODOM and Velocity Smoothing -->
+  <!--
+  <include file="$(find turtlebot_navigation)/launch/includes/velocity_smoother.launch.xml" />
+  <include file="$(find turtlebot_navigation)/launch/includes/safety_controller.launch.xml" />
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
+  -->
+
+  <include file="$(find needybot_speech)/launch/needybot_speech.launch">
+    <arg name="manifest" value="$(find needybot_hello_world)/param/dialog_manifest.yml" />
+  </include>
+
+  <node pkg="needybot" type="ui.py" name="needybot_ui" output="screen" />
+  <node pkg="needybot_hello_world" type="say_hello.py" name="say_hello" output="screen" />
+  <node pkg="needybot_hello_world" type="hello_server.py" name="hello_server" output="screen" />
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+</launch>

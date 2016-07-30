@@ -1,0 +1,14 @@
+hello:
+  template: "Hello world! My name is ${name}."
+  params:
+    name: "Needybot"
+ask_like_robots:
+  template: "Do you like robots?"
+excited_01:
+  template: "That makes me really happy!"
+excited_02:
+  template: "You're my new best friend!"
+sad_01:
+  template: "That's too bad, because I like you."
+sad_02:
+  template: "That makes me a very sad little robot."

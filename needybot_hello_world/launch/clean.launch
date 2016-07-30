@@ -1,0 +1,8 @@
+<launch>
+  <rosparam ns="needybot" subst_value="true">
+    voice:
+      cache_dir: $(find needybot_hello_world)/cache
+  </rosparam>
+
+  <include file="$(find needybot_dialog)/launch/clean_cache.launch" />
+</launch>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<package>
+  <name>needybot_hello_world</name>
+  <version>0.1.0</version>
+  <description>The Needybot hello world package</description>
+
+  <maintainer email="needybot@wk.com">Needybot</maintainer>
+  <license>Apache 2</license>
+  <author email="needybot@wk.com">Needybot</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>tf</build_depend>
+  <build_depend>kobuki_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>sensor_messages</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+  <build_depend>needybot</build_depend>
+  <build_depend>needybot_speech</build_depend>
+  <build_depend>needybot_msgs</build_depend>
+  <build_depend>needybot_srvs</build_depend>
+
+  <run_depend>tf</run_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>actionlib</run_depend>
+  <run_depend>actionlib_msgs</run_depend>
+  <run_depend>needybot</run_depend>
+  <run_depend>needybot_speech</run_depend>
+  <run_depend>needybot_msgs</run_depend>
+  <run_depend>needybot_srvs</run_depend>
+</package>
